@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <?!= include('Styles'); ?>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Application Form</h1>
+        <form id="appForm">
+        <div class="custom-form-group form-input">
+            <label>Full Name</label>
+            <input type="text" name="fullname">
+        </div>
+        <div class="custom-form-group form-input">
+            <label>Recipient</label>
+            <input type="text" name="recipient">
+        </div>
+        <div class="custom-form-group form-textarea">
+            <label>Message</label>
+            <textarea name="message" id="" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit">Save</button>
+        <button>Reset</button>
+        </form>
+    </div>
+    <script>
+        document.querySelector("#appForm").addEventListener("submit", 
+        function(e)
+        {
+        e.preventDefault();    //stop form from submitting
+        google.script.run.addData(this);
+         google.script.host.close();//close this dialogbox
+        }
+        );
+    </script>
+  </body>
+</html>
+
+
