@@ -9,31 +9,29 @@
     <div class="container">
         <h1>Application Form</h1>
         <form id="appForm">
-        <div class="custom-form-group form-input">
-            <label>Full Name</label>
-            <input type="text" name="fullname">
-        </div>
-        <div class="custom-form-group form-input">
-            <label>Recipient</label>
-            <input type="text" name="recipient">
-        </div>
-        <div class="custom-form-group form-textarea">
-            <label>Message</label>
-            <textarea name="message" id="" cols="30" rows="10"></textarea>
-        </div>
-        <button type="submit">Save</button>
-        <button>Reset</button>
+            <div class="custom-form-group form-input">
+                <label>Full Name</label>
+                <input type="text" name="fullname">
+            </div>
+            <div class="custom-form-group form-input">
+                <label>Recipient</label>
+                <input type="text" name="recipient">
+            </div>
+            <div class="custom-form-group form-textarea">
+                <label>Message</label>
+                <textarea name="message" id="" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit">Save</button>
+            <!-- <button>Reset</button> -->
         </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script>
-        document.querySelector("#appForm").addEventListener("submit", 
-        function(e)
-        {
-        e.preventDefault();    //stop form from submitting
-        google.script.run.addData(this);
-         google.script.host.close();//close this dialogbox
-        }
-        );
+        $('#appForm').submit(function() {
+            alert("submit form is working!");
+            google.script.run.addEntry(this);
+            // google.script.host.close();
+        })
     </script>
   </body>
 </html>
