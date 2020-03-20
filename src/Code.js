@@ -24,13 +24,17 @@ function showMarkup(){
 }
 
 function addEntry(data) {
-    DocumentApp.getUi().alert('Hi po!');
-    var data = data;
     var plainText = "Hello World!";
     var doc = DocumentApp.getActiveDocument();
     var body = doc.getBody();
     body.appendParagraph(plainText);
-    // body.appendPageBreak();
-    // doc.save();
+    body.appendParagraph(data.fullname);
+    body.appendParagraph(data.recipient);
+    body.appendParagraph(data.message);
+}
+
+function testing() {
+    Logger.log("success");
+    return true;
 }
   

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <?!= include('Styles'); ?>
+  </head>
+  <body>
+    <div class="container">
+        <h1>New Test</h1>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $('#appForm').submit(function() {
+            alert("submit form is working!");
+            google.script.run.addEntry(this);
+            // google.script.host.close();
+        })
+    </script>
+  </body>
+</html>
+
+

@@ -3,35 +3,49 @@
   <head>
     <base target="_top">
     <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <?!= include('Styles'); ?>
   </head>
   <body>
     <div class="container">
         <h1>Application Form</h1>
-        <form id="appForm">
+        <div id="appForm">
             <div class="custom-form-group form-input">
                 <label>Full Name</label>
-                <input type="text" name="fullname">
+                <input type="text" name="fullname" id="fullname">
             </div>
             <div class="custom-form-group form-input">
                 <label>Recipient</label>
-                <input type="text" name="recipient">
+                <input type="text" name="recipient" id="recipient">
             </div>
             <div class="custom-form-group form-textarea">
                 <label>Message</label>
-                <textarea name="message" id="" cols="30" rows="10"></textarea>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
             </div>
-            <button type="submit">Save</button>
-            <!-- <button>Reset</button> -->
-        </form>
+            <button type="submit" class="btn-submit">Save</button>
+            <!-- <button onclick="">Reset</button> -->
+        </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script>
-        $('#appForm').submit(function() {
-            alert("submit form is working!");
-            google.script.run.addEntry(this);
-            // google.script.host.close();
-        })
+        $(document).ready(function(){
+            $('.btn-submit').click(function() {
+
+                var data = {
+                    fullname: $('#fullname').val(),
+                    recipient: $('#recipient').val(),
+                    message: $('#message').val(),
+                }
+
+                function onSuccess() {
+                    alert('success');
+                }
+                function onFailure() {
+                    alert('fail');
+                }
+                google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onFailure).addEntry(data);
+                // google.script.host.close();
+            });
+        });
     </script>
   </body>
 </html>
