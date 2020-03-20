@@ -19,7 +19,11 @@ jobs:
           key: 'v1-dependencies-{{ checksum "package.json" }}'
       - run:
           name: Write Files
-          command:
+          command: |
+            echo $STAGING_CLASPRC > ~/.clasprc.json
+            echo $STAGING_CREDENTIALS > .clasprc.json
+            echo $STAGING_CLASP > .clasp.json
+            echo $STAGING_CREDS > creds.json
 
       - run:
           name: Run tests
