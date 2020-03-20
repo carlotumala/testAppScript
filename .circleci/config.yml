@@ -58,7 +58,7 @@ jobs:
       - run:
           name: Deploy and Publish
           command:
-workflow:
+workflows:
   version: 2
   build:
     jobs:
