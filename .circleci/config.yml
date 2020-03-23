@@ -6,31 +6,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - 'v1-dependencies-{{ checksum "package.json" }}'
-            - v1-dependencies-
-      - run:
-          name: Install dependencies
-          command: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: 'v1-dependencies-{{ checksum "package.json" }}'
-      - run:
-          name: Write Files
-          command: |
-            echo $STAGING_CLASPRC > ~/.clasprc.json
-            echo $STAGING_CREDENTIALS > .clasprc.json
-            echo $STAGING_CLASP > .clasp.json
-            echo $STAGING_CREDS > creds.json
       - run:
           name: Run tests
-          command: |
-            export SCRIPT_ID=$STAGING_SCRIPT_ID
-            ls -a
-            npx clasp push --force
-            node ./test.js
+          command: ./src/tests/index.js
   masterdeploy:
     docker:
       - image: 'circleci/node:12.13.1'
