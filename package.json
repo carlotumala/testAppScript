@@ -1,0 +1,25 @@
+{
+  "name": "testappscript",
+  "version": "1.0.0",
+  "main": "Code.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlotumala/testAppScript.git"
+  },
+  "author": "carlo <carlo@hyperstacksinc.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@google/clasp": "^2.3.0"
+  },
+  "dependencies": {
+    "@google/clasp": "^2.3.0",
+    "googleapis": "^31.0.2"
+  },
+  "private": true,
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/carlotumala/testAppScript/issues"
+  },
+  "homepage": "https://github.com/carlotumala/testAppScript#readme"
+}
