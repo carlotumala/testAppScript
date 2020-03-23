@@ -2,7 +2,9 @@
   "name": "testappscript",
   "version": "1.0.0",
   "main": "Code.js",
-  "scripts": {},
+  "scripts": {
+    "master-deploy": "bash ./deploy.sh 'Master'"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/carlotumala/testAppScript.git"

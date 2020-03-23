@@ -5,10 +5,6 @@ if ((typeof GasTap)==='undefined') { // GasT Initialization. (only if not initia
 var test = new GasTap()
 
 function gastTestRunner() {
-    test('do calculation right', (t) => {    
-        var i = 3 + 4
-        t.equal(i, 7, 'calc 3 + 4 = 7 right')
-    })
     
     test('add Entry', (t) => {
         var data = {

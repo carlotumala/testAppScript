@@ -20,17 +20,17 @@ jobs:
       - run:
           name: Write Files
           command: |
-            echo $STAGING_CLASPRC > ~/.clasprc.json
-            echo $STAGING_CREDENTIALS > .clasprc.json
-            echo $STAGING_CLASP > .clasp.json
-            echo $STAGING_CREDS > creds.json
+            echo $MASTER_CLASPRC > ~/.clasprc.json
+            echo $MASTER_CREDENTIALS > .clasprc.json
+            echo $MASTER_CLASP > .clasp.json
+            echo $MASTER_CREDS > creds.json
       - run:
           name: Run tests
           command: |
-            export SCRIPT_ID=$STAGING_SCRIPT_ID
+            export SCRIPT_ID=$MASTER_SCRIPT_ID
             ls -a
             npx clasp push --force
-            node ./src/tests/index.js
+            node ./test.js
   masterdeploy:
     docker:
       - image: 'circleci/node:12.13.1'
