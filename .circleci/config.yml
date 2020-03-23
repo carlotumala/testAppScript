@@ -30,7 +30,7 @@ jobs:
             export SCRIPT_ID=$STAGING_SCRIPT_ID
             ls -a
             npx clasp push --force
-            node ./test.js
+            node ./src/tests/index.js
   masterdeploy:
     docker:
       - image: 'circleci/node:12.13.1'
