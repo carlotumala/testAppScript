@@ -51,15 +51,15 @@ jobs:
       - run:
           name: Write Files
           command: |
-            echo $PRODUCTION_CLASPRC > ~/.clasprc.json
-            echo $PRODUCTION_CREDENTIALS > .clasprc.json
-            echo $PRODUCTION_CLASP > .clasp.json
-            echo $PRODUCTION_CREDS > creds.json
+            echo $MASTER_CLASPRC > ~/.clasprc.json
+            echo $MASTER_CREDENTIALS > .clasprc.json
+            echo $MASTER_CLASP > .clasp.json
+            echo $MASTER_CREDS > creds.json
       - run:
           name: Deploy and Publish
           command: |
             npx clasp push --force
-            yarn production-deploy
+            yarn master-deploy
 workflows:
   version: 2
   build:
