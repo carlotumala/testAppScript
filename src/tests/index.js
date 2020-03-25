@@ -2,7 +2,12 @@ if ((typeof GasTap)==='undefined') { // GasT Initialization. (only if not initia
     eval(UrlFetchApp.fetch('https://raw.githubusercontent.com/zixia/gast/master/src/gas-tap-lib.js').getContentText())
 } // Class GasTap is ready for use now!
 
-var test = new GasTap()
+var log = "";
+var loggerFunc = function (msg) { log += msg + "\n" }
+
+var test = new GasTap({
+    logger: loggerFunc
+})
 
 function gastTestRunner() {
     
@@ -19,5 +24,5 @@ function gastTestRunner() {
     
     test.finish();
 
-    return { failures: test.totalFailed(), success: test.totalSucceed()}
+    return { failures: test.totalFailed(), success: test.totalSucceed(), log: log }
 }

@@ -53,8 +53,8 @@ function callAppsScript(auth) {
       }
       process.exit(1);
     } else {
-      console.log(resp);
       const data = resp.data.response.result;
+      console.log(data);
       const log = data.log;
       console.log(log);
       const failureCount = data.failures;
