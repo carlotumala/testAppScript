@@ -1,3 +1,7 @@
+// var ui = function() {
+//     return DocumentApp.getUi()
+// }
+
 function onOpen(e) {
     var menu = DocumentApp.getUi().createAddonMenu();
     menu.addItem('Launch', 'showMarkup');
@@ -37,4 +41,20 @@ function testing() {
     Logger.log("success");
     return true;
 }
+
+function useTemplate(id, newTitle) {
+    Logger.log(newTitle);
+    Logger.log(id);
+    // if(!id)
+    //     id = "1Ozf6U16RXJV8Jn83mTzVEA_suWJnpZ9j9EqdrgWelbw";
+    
+    var file = DriveApp.getFileById(id);
+    Logger.log(file);
+    var newfile = file.makeCopy(newTitle);
+    Logger.log(newfile);
+    // var doc = DocumentApp.openById(id);
+    // doc.getBody();
+    return true;    
+}
+
   

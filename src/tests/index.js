@@ -1,15 +1,17 @@
-if ((typeof GasTap)==='undefined') { // GasT Initialization. (only if not initialized yet.)
-    eval(UrlFetchApp.fetch('https://raw.githubusercontent.com/zixia/gast/master/src/gas-tap-lib.js').getContentText())
-} // Class GasTap is ready for use now!
 
-var log = "";
-var loggerFunc = function (msg) { log += msg + "\n" }
-
-var test = new GasTap({
-    logger: loggerFunc
-})
 
 function gastTestRunner() {
+
+    if ((typeof GasTap)==='undefined') { // GasT Initialization. (only if not initialized yet.)
+        eval(UrlFetchApp.fetch('https://raw.githubusercontent.com/zixia/gast/master/src/gas-tap-lib.js').getContentText())
+    } // Class GasTap is ready for use now!
+    
+    var log = "";
+    var loggerFunc = function (msg) { log += msg + "\n" }
+    
+    var test = new GasTap({
+        logger: loggerFunc
+    })
     
     test('add Entry', (t) => {
         var data = {

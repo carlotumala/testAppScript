@@ -1,12 +1,4 @@
 {
-  "timeZone": "America/New_York",
-  "oauthScopes": [
-    "https://www.googleapis.com/auth/documents.currentonly",
-    "https://www.googleapis.com/auth/script.container.ui",
-    "https://www.googleapis.com/auth/script.external_request",
-    "https://www.googleapis.com/auth/script.scriptapp",
-    "https://www.googleapis.com/auth/script.webapp.deploy"
-  ],
   "dependencies": {
     "libraries": [{
       "userSymbol": "OAuth2",
@@ -15,8 +7,17 @@
     }]
   },
   "exceptionLogging": "STACKDRIVER",
-  "runtimeVersion": "V8",
   "executionApi": {
     "access": "ANYONE"
-  }
+  },
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/documents.currentonly",
+    "https://www.googleapis.com/auth/script.container.ui",
+    "https://www.googleapis.com/auth/script.scriptapp",
+    "https://www.googleapis.com/auth/script.webapp.deploy",
+    "https://www.googleapis.com/auth/drive"
+  ],
+  "runtimeVersion": "V8",
+  "timeZone": "America/New_York"
 }

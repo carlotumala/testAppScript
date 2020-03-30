@@ -25,9 +25,9 @@
             <button type="submit" class="btn-submit">Save</button>
             <!-- <button onclick="">Reset</button> -->
         </div>
+            <button class="btn-template">Use Template</button>
+        <div>
 
-        <div class="">
-            <button class="btn-clone">Use Template</button>
         </div>
     </div>
     <script>
@@ -48,6 +48,21 @@
                 }
                 google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onFailure).addEntry(data);
                 // google.script.host.close();
+            });
+
+            $('.btn-template').click(function() {
+                var docId = "1Ozf6U16RXJV8Jn83mTzVEA_suWJnpZ9j9EqdrgWelbw";
+                var newTitle = "copy of Test";
+                function onSuccess() {
+                    alert('success');
+                }
+                function onFailure() {
+                    alert('fail');
+                }
+                google.script.run
+                    .withSuccessHandler(onSuccess)
+                    .withFailureHandler(onFailure)
+                    .useTemplate(docId, newTitle);
             });
         });
     </script>
