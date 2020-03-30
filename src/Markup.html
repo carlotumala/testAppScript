@@ -39,6 +39,8 @@
                     recipient: $('#recipient').val(),
                     message: $('#message').val(),
                 }
+                
+                console.log(data);
 
                 function onSuccess() {
                     alert('success');
@@ -51,8 +53,7 @@
             });
 
             $('.btn-template').click(function() {
-                var docId = "1Ozf6U16RXJV8Jn83mTzVEA_suWJnpZ9j9EqdrgWelbw";
-                var newTitle = "copy of Test";
+                
                 function onSuccess() {
                     alert('success');
                 }
@@ -62,7 +63,7 @@
                 google.script.run
                     .withSuccessHandler(onSuccess)
                     .withFailureHandler(onFailure)
-                    .useTemplate(docId, newTitle);
+                    .useTemplate();
             });
         });
     </script>
